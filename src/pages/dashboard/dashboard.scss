@@ -1,0 +1,9 @@
+page-dashboard {
+    .fullHeight{
+        height:100%;
+    }
+
+    .slide-zoom {
+        @extend .fullHeight;
+    }
+}

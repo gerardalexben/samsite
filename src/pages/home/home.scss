@@ -1,0 +1,15 @@
+page-home {
+
+    .popover-class{
+        top:56px !important; //since tab height is 56px
+    }
+    
+    .ion-ios-customicon-outline,
+    .ion-ios-customicon,.ion-md-customicon,.ion-md-customicon-outline {
+       content: url('../../assets/imgs/cmp_logo.png');
+       height:56px;
+       width:60% !important;
+    }
+
+}
+
