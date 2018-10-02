@@ -1,5 +1,57 @@
 page-film {
-    .scroll-content {
-        text-align: center;
+    .fullHeight{
+        height:100%;
     }
+
+    .slide-zoom {
+        @extend .fullHeight;
+    }
+
+    @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+      
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes fadeOut {
+        from {
+          opacity: 1;
+        }
+      
+        to {
+          opacity: 0;
+        }
+      }
+
+      @keyframes fivePhasesFadeIn {
+        0% {
+          opacity: 1;
+        }
+        25% {
+          opacity: 0.25;
+        }
+        50% {
+          opacity: 0.5;
+        }
+        75% {
+          opacity: 0.75;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      .fadeIn {
+        animation-name: fadeIn;
+        animation-duration: 4s;
+      }
+
+      .fadeOut {
+        animation-name: fadeOut;
+        animation-duration: 8s;
+      }
 }

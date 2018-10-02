@@ -11,8 +11,52 @@
   </ion-navbar>
 
 </ion-header> -->
+<ion-content padding class="fullHeight">    
+    <ion-grid class="fullHeight">
+      
+      <ion-row style="height:10%"><ion-title>Constructions</ion-title>
+        <button *ngIf="!showGallery" ion-button (click)="ViewGallery()">View Gallery</button>
+        <button *ngIf="showGallery" ion-button (click)="HideGallery()">Close Gallery</button>
+      </ion-row>
+  
+      <ion-row *ngIf="!showGallery" style="height: 90%">
+        <ion-col col-8 >
+          <ion-row style="height:60%"><img class="fullHeight" style="width:100%" src="../../assets/imgs/fwdconstructionphotos/pic13.jpg"></ion-row>
+          <ion-row style="height:40%">
+            <ion-card >
+              <ion-card-content>
+                About Constructions
+              </ion-card-content>
+            </ion-card>
+          </ion-row>
+        </ion-col>
+  
+        <ion-col col-4 class="fullHeight">
+          <ion-card class="fadeIn">
+            <ion-item>
+                <ion-avatar item-start>
+                  <img src="../../assets/imgs/fwdconstructionphotos/pic13.jpg">
+                </ion-avatar>
+                <h2>Marty McFly</h2>
+                <p>November 5, 1955</p>
+              </ion-item>         
+                       
+              <ion-card-content>
+                <p>Wait a minute. Wait a minute, Doc. Uhhh... Are you telling me that you built a time machine... out of a DeLorean?! Whoa. This is heavy.</p>
+              </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+  
+  
+      <!-- Show Gallery -->
+      <ion-row *ngIf="showGallery" class="fullHeight">
+          <ion-slides style="height:90%" autoplay="3000" loop="true" speed="3000" [slidesPerView]="1" #slides>
+              <ion-slide *ngFor="let pic of pics" class="fullHeight">
+                  <img class="fullHeight" [src]="pic">
+              </ion-slide>
+          </ion-slides>
+      </ion-row>
+    </ion-grid>
+  </ion-content>
 
-
-<ion-content padding>
-  <img style="width:70%;height:95%" src="../../assets/imgs/realestate.jpg">
-</ion-content>
