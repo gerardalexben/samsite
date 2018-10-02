@@ -1,7 +1,7 @@
 <ion-content>
   <ion-grid fixed>
     <ion-tabs tabsPlacement=top tabsLayout=icon-start (tap)="tabClicked($event)" selectedIndex="1" #myTabs>
-       <ion-tab tabIcon="customicon"></ion-tab>        
+       <!--<ion-tab tabIcon="customicon"></ion-tab>        -->
         <ion-tab tabTitle="Home" tabIcon="home"  [root]="default" (ionSelect)="setIndex($event)" ></ion-tab>
         <ion-tab tabTitle="Services"  tabIcon="cog" [root]="tab2"(ionSelect)="setIndex($event)"></ion-tab>            
       <ion-tab tabTitle="Contact" tabIcon="call" [root]="tab3" (ionSelect)="setIndex($event)" ></ion-tab>
