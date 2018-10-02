@@ -24,25 +24,25 @@ public tabevent: any;
   constructor(public navCtrl: NavController, public popoverCtrl: PopoverController, public appCtrl: App) {
 
   }
-
-  presentPopover(myEvent) {
-    this.tabevent = myEvent;     
-    console.log("popover clicked");
-    let popover = this.popoverCtrl.create(ServiceslistPage,{},{cssClass:'popover-class'});
-    popover.present({
-      ev: {target: myEvent.btn._elementRef.nativeElement}
-    });
+  
+  presentPopover(myEvent: any) {
+    if(myEvent != undefined){
+      this.tabevent = myEvent;     
+      console.log("popover clicked");
+      let popover = this.popoverCtrl.create(ServiceslistPage,{},{cssClass:'popover-class'});
+      popover.present({
+        ev: {target: myEvent.btn._elementRef.nativeElement}
+      });
+    }    
   }
 
   tabClicked(evt: any){
-    if(this.currPageIdx == 2 && evt.target.textContent == "Services")
+    if(evt.target.textContent == "Services")
     this.presentPopover(this.tabevent);
   }
 
   setIndex(myEvent: any) {
-    this.currPageIdx = this.tabRef.getSelected().index;
-    console.log(this.currPageIdx);
-    if(this.currPageIdx == 2)
+    if(myEvent.tabTitle == "Services")
     this.presentPopover(myEvent)
   }
   
