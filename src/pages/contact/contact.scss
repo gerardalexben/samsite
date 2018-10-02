@@ -1,5 +1,21 @@
 page-contact {
     .scroll-content{
-       background-image: url('../../assets/imgs/contact.jpg');
+       background-image: url('../../assets/imgs/services.png');
+       background-repeat: repeat;
+       background-size: 100%;
     }
+
+    .card-md .list-md .item-md.item-block:not(:last-child) .item-inner {
+        border-bottom: 1px solid #dedede;
+      }
+
+      .card-md .list-md .item-input:last-child{
+          border-bottom: 0;
+      }
+
+      .card-md .textarea .text-input .text-input-md {
+          border-width:1px;
+          border-style: solid;
+          border-color: #dedede;
+      }
 }
