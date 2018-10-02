@@ -24,7 +24,7 @@ public tabevent: any;
   constructor(public navCtrl: NavController, public popoverCtrl: PopoverController, public appCtrl: App) {
 
   }
-  
+
   presentPopover(myEvent: any) {
     if(myEvent != undefined){
       this.tabevent = myEvent;     
@@ -39,6 +39,11 @@ public tabevent: any;
   tabClicked(evt: any){
     if(evt.target.textContent == "Services")
     this.presentPopover(this.tabevent);
+  }
+
+ServicesPop(myEvent: any) {
+    
+    this.presentPopover(myEvent);
   }
 
   setIndex(myEvent: any) {
