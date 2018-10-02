@@ -11,8 +11,55 @@
   </ion-navbar>
 
 </ion-header> -->
-<ion-content padding class="fullHeight">    
-    <ion-grid class="fullHeight">
+<ion-content padding class="fullHeight"> 
+Real Estate 
+<ion-grid>
+  <ion-row>
+    <ion-col>
+      <ion-card>
+        <img src="../assets/imgs/villa.jpg"/>
+        <ion-card-content>
+          <ion-card-title>
+            Villas
+          </ion-card-title>
+          <p>
+            The most popular industrial group ever, and largely
+            responsible for bringing the music to a mass audience.
+          </p>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+    <ion-col>
+      <ion-card>
+          <img src="../assets/imgs/Apartments.jpg"/>
+          <ion-card-content>
+          <ion-card-title>
+            Apartments
+          </ion-card-title>
+          <p>
+          The most popular industrial group ever, and largely
+          responsible for bringing the music to a mass audience.
+          </p>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+    <ion-col>
+      <ion-card>
+        <img src="../assets/imgs/comercial.jpg"/>
+        <ion-card-content>
+        <ion-card-title>
+          Commercial
+        </ion-card-title>
+        <p>
+          The most popular industrial group ever, and largely
+          responsible for bringing the music to a mass audience.
+        </p>
+      </ion-card-content>
+      </ion-card>
+      </ion-col>
+    </ion-row>
+</ion-grid>  
+    <!--<ion-grid class="fullHeight">
       
       <ion-row style="height:10%"><ion-title>Constructions</ion-title>
         <button *ngIf="!showGallery" ion-button (click)="ViewGallery()">View Gallery</button>
@@ -50,13 +97,13 @@
   
   
       <!-- Show Gallery -->
-      <ion-row *ngIf="showGallery" class="fullHeight">
+      <!--<ion-row *ngIf="showGallery" class="fullHeight">
           <ion-slides style="height:90%" autoplay="3000" loop="true" speed="3000" [slidesPerView]="1" #slides>
               <ion-slide *ngFor="let pic of pics" class="fullHeight">
                   <img class="fullHeight" [src]="pic">
               </ion-slide>
           </ion-slides>
       </ion-row>
-    </ion-grid>
+    </ion-grid>-->
   </ion-content>
 

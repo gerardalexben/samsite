@@ -35,14 +35,19 @@ public tabevent: any;
   }
 
   tabClicked(evt: any){
-    if(this.currPageIdx == 2 && evt.target.textContent == "Services")
+    if(this.currPageIdx == 1 && evt.target.textContent == "Services")
     this.presentPopover(this.tabevent);
+  }
+
+ServicesPop(myEvent: any) {
+    
+    this.presentPopover(myEvent);
   }
 
   setIndex(myEvent: any) {
     this.currPageIdx = this.tabRef.getSelected().index;
     console.log(this.currPageIdx);
-    if(this.currPageIdx == 2)
+    if(this.currPageIdx == 1)
     this.presentPopover(myEvent)
   }
   
