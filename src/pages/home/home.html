@@ -1,5 +1,5 @@
 <ion-content>
-  <ion-grid fixed>
+  <ion-grid fixed ng-if="showhomepage">
     <ion-tabs tabsPlacement=top tabsLayout=icon-start (tap)="tabClicked($event)" #myTabs>
        <!--<ion-tab tabIcon="customicon"></ion-tab>        -->
         <ion-tab tabTitle="Home" tabIcon="home"  [root]="default" (ionSelect)="setIndex($event)" ></ion-tab>

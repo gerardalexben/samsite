@@ -25,11 +25,11 @@ export class DashboardPage {
   }
 
   ionViewDidEnter(){
-    this.slides.startAutoplay();
+    //this.slides.startAutoplay();
   }
 
   ionViewWillLeave(){
-    this.slides.stopAutoplay();
+    //this.slides.stopAutoplay();
   }
 
 }
