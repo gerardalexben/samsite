@@ -20,6 +20,7 @@ public tab3: any = ContactPage;
 public default: any = DashboardPage;
 public currPageIdx: any;
 public tabevent: any;
+public showhomepage: any = true;
 @ViewChild('myTabs') tabRef: Tabs;
   constructor(public navCtrl: NavController, public popoverCtrl: PopoverController, public appCtrl: App) {
 

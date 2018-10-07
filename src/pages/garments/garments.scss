@@ -2,4 +2,11 @@ page-garments {
     .scroll-content {
         text-align: center;
     }
+    .toolbar-title-md
+    {
+        color: #6f1612;
+    }
+    .logoimg{
+        transition: transform .6s cubic-bezier(0.4,0,0.2,1),-webkit-transform .6s cubic-bezier(0.4,0,0.2,1);
+    }
 }
