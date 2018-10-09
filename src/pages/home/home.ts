@@ -8,7 +8,7 @@ import { ServicesPage } from '../services/services';
 import { ContactPage } from '../contact/contact';
 import { DashboardPage } from '../dashboard/dashboard';
 import { ServiceslistPage } from '../serviceslist/serviceslist';
-
+let popover: any;
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -30,7 +30,7 @@ public showhomepage: any = true;
     if(myEvent != undefined){
       this.tabevent = myEvent;     
       console.log("popover clicked");
-      let popover = this.popoverCtrl.create(ServiceslistPage,{},{cssClass:'popover-class'});
+      popover = this.popoverCtrl.create(ServiceslistPage,{},{cssClass:'popover-class'});
       popover.present({
         ev: {target: myEvent.btn._elementRef.nativeElement}
       });
@@ -38,8 +38,14 @@ public showhomepage: any = true;
   }
 
   tabClicked(evt: any){
-    if(evt.target.textContent == "Services")
+    
+    if(evt.target.textContent == "Services" && this.tabevent){
+    this.tabRef.select(1);
     this.presentPopover(this.tabevent);
+    }
+    else{
+      this.tabevent = undefined;
+    }
   }
 
 ServicesPop(myEvent: any) {
@@ -48,10 +54,12 @@ ServicesPop(myEvent: any) {
   }
 
   setIndex(myEvent: any) {
+    if (popover)
+      popover.dismiss();        
     if(myEvent.tabTitle == "Services")
     this.presentPopover(myEvent)
   }
-  
+
 }
 
 
