@@ -17,15 +17,32 @@ import { ViewChild } from '@angular/core';
 })
 export class DashboardPage {
   @ViewChild(Slides) slides: Slides;
+  public imgName: any = "../assets/imgs/fashion.jpg";
+  public imgAction: boolean = false;
+  public imgIndex: any = 0;
+  public imgList: any=  ["../assets/imgs/Apartments.jpg", "../assets/imgs/comercial.jpg","../assets/imgs/Villa.jpg"];
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad DashboardPage');
   }
+  
 
   ionViewDidEnter(){
     //this.slides.startAutoplay();
+    setInterval(()=> {
+    this.imgName = this.imgList[this.imgIndex];  
+    this.imgIndex++;
+
+    if(this.imgIndex >= this.imgList.length)
+    {
+      this.imgIndex = 0;
+      
+    } 
+    this.imgAction = true;   
+      
+ }, 7000);
   }
 
   ionViewWillLeave(){

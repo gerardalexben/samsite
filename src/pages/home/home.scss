@@ -1,5 +1,16 @@
 page-home {
 
+.tabs-md .tab-button-text
+{
+    font-size: 1.5rem;
+}
+
+.tabs-md .tab-button[aria-selected=true]
+{
+    color:rgb(255, 193, 7);
+}
+
+
     .popover-class{
         top:56px !important; //since tab height is 56px
     }

@@ -32,13 +32,13 @@ export class FilmPage {
     this.showGallery = false;
   }
   ionViewDidEnter() {
-    if (this.showGallery)
-      this.slides.startAutoplay();
+    // if (this.showGallery)
+    //   this.slides.startAutoplay();
   }
 
   ionViewWillLeave() {
-    if (this.showGallery)
-      this.slides.stopAutoplay();
+    // if (this.showGallery)
+    //   this.slides.stopAutoplay();
   }
 
 }
