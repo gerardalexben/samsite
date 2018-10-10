@@ -65,13 +65,14 @@
 
 import { TabsPage } from './../tabs/tabs';
 import { Component, ViewChild } from '@angular/core';
-import { IonicPage, NavController, Nav } from 'ionic-angular';
+import { IonicPage, NavController, Nav, App } from 'ionic-angular';
  
 export interface PageInterface {
   title: string;
   pageName: string;
   tabComponent?: any;
   index?: number;
+  children?:any;
 }
  
 @IonicPage()
@@ -87,29 +88,43 @@ export class HomePage {
   @ViewChild(Nav) nav: Nav;
  
   pages: PageInterface[] = [
-    { title: 'Home', pageName: 'DashboardPage', tabComponent: 'DashboardPage', index: 0 },
-    { title: 'Services', pageName: 'ServicesPage', tabComponent: 'ServicesPage', index: 1 },
-    { title: 'Contact', pageName: 'ContactPage', tabComponent: 'ContactPage', index: 2 },
-    { title: 'About', pageName: 'AboutPage', tabComponent: 'AboutPage', index: 3 }
+    { title: 'Home', pageName: 'DashboardPage', tabComponent: 'DashboardPage', index: 0, children:[] },
+    { title: 'Services', pageName: 'ServicesPage', tabComponent: 'ServicesPage', index: 1,
+     children:[{name:'Laundry', pageName:'LaundryPage'},{name:'Garments', pageName:'GarmentsPage'},{name:'Real Estate', pageName:'RealestatePage'},{name:'Sericulture', pageName:'HealthcarePage'},{name:'Film Distribution', pageName:'FilmPage'}] },
+    { title: 'Contact', pageName: 'ContactPage', tabComponent: 'ContactPage', index: 2, children:[] },
+    { title: 'About', pageName: 'AboutPage', tabComponent: 'AboutPage', index: 3, children:[] }
   ];
  
-  constructor(public navCtrl: NavController) { }
+  constructor(public navCtrl: NavController, public app: App) { }
  
   openPage(page: PageInterface) {
     let params = {};
+    let childIndexSet: boolean = false;
+    let idx: any;
+    if(page.index == undefined)
+    idx = 1;
+    else
+    idx = page.index;
+
+    
+
+    //fill index for children
+    if (page.index == undefined){
+      childIndexSet = true;
+    }
  
     // The index is equal to the order of our tabs inside tabs.ts
-    if (page.index) {
-      params = { tabIndex: page.index };
+    if (idx) {
+      params = { tabIndex: idx, pageName:page.pageName };
     }
  
     // The active child nav is our Tabs Navigation
-    if (this.nav.getActiveChildNav() && page.index != undefined) {
-      this.nav.getActiveChildNav().select(page.index);
+    if (this.nav.getActiveChildNav() && idx != undefined && !childIndexSet) {
+      this.nav.getActiveChildNav().select(idx);      
     } else {
       // Tabs are not active, so reset the root page 
       // In this case: moving to or from SpecialPage
-      this.nav.setRoot(page.pageName, params);
+      this.nav.setRoot(this.rootPage, params);
     }
   }
  
