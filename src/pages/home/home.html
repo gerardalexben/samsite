@@ -1,4 +1,4 @@
-<ion-content>
+<!-- <ion-content>
   <ion-grid fixed ng-if="showhomepage">
     <ion-tabs tabsPlacement=top tabsLayout=icon-start (tap)="tabClicked($event)" #myTabs>
        <ion-tab tabTitle="Home" [root]="default" (ionSelect)="setIndex($event)" ></ion-tab>
@@ -7,4 +7,24 @@
       <ion-tab tabTitle="About" [root]="tab1" (ionSelect)="setIndex($event)" ></ion-tab>
     </ion-tabs>
   </ion-grid>
-</ion-content>
+</ion-content> -->
+
+<ion-menu [content]="content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+ 
+  <ion-content>
+    <ion-list>
+      <button ion-item menuClose *ngFor="let p of pages" (click)="openPage(p)">
+          <ion-icon item-start [name]="p.icon" [color]="isActive(p)"></ion-icon>
+          {{ p.title }}
+        </button>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+ 
+<!-- main navigation -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

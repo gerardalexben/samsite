@@ -26,6 +26,7 @@ import { RealestatePage } from '../pages/realestate/realestate';
 import { RealestatePageModule } from '../pages/realestate/realestate.module';
 import { HealthcarePage } from '../pages/healthcare/healthcare';
 import { HealthcarePageModule } from '../pages/healthcare/healthcare.module';
+import { TabsPageModule } from '../pages/tabs/tabs.module';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { HealthcarePageModule } from '../pages/healthcare/healthcare.module';
     GarmentsPageModule,
     FilmPageModule,
     RealestatePageModule,
-    HealthcarePageModule
+    HealthcarePageModule,
+    TabsPageModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
