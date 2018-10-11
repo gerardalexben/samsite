@@ -32,6 +32,11 @@ export class ServiceslistPage {
 
   OpenPage(page: any){
     this.viewCtrl.dismiss();
+    let navLength = this.app.getActiveNav().length();
+    while(navLength > 1){
+      this.app.getActiveNav().pop();
+      navLength--;
+    }
     this.app.getActiveNav().push(page);
     //this.navCtrl.push(ServicesPage);
   }

@@ -111,11 +111,11 @@ export class HomePage {
     //fill index for children
     if (page.index == undefined){
       childIndexSet = true;
-    }
- 
-    // The index is equal to the order of our tabs inside tabs.ts
-    if (idx) {
       params = { tabIndex: idx, pageName:page.pageName };
+    }
+
+    else{
+      params = { tabIndex: idx };
     }
  
     // The active child nav is our Tabs Navigation

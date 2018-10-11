@@ -48,7 +48,7 @@ export class TabsPage {
     }    
   }
   tabClicked(evt: any){
-    
+    this.navParams = undefined;
     if(evt.target.textContent == "Services" && this.tabevent){
     this.tabRef.select(1);
     this.presentPopover(this.tabevent);
@@ -62,8 +62,8 @@ export class TabsPage {
   setIndex(myEvent: any) {
     if (popover)
       popover.dismiss();        
-    if(myEvent.tabTitle == "Services")
+    if(myEvent.tabTitle == "Services" && !this.navParams)
     this.presentPopover(myEvent)
-  }
+    }
 
 }
