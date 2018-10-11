@@ -11,7 +11,7 @@
   </ion-navbar>
 
 </ion-header> -->
-<ion-header>
+<ion-header *ngIf="showHeader">
     <ion-navbar>
       <ion-buttons start>
         <button ion-button menuToggle>
@@ -22,7 +22,7 @@
     </ion-navbar>
   </ion-header>
 <ion-content padding class="fullHeight"> 
-Real Estate 
+    <ion-title>Constructions</ion-title>
 <ion-grid>
   <ion-row>
     <ion-col>

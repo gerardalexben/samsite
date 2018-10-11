@@ -21,32 +21,47 @@ export class DashboardPage {
   public imgAction: boolean = false;
   public imgIndex: any = 0;
   public imgList: any=  ["../assets/imgs/Apartments.jpg", "../assets/imgs/comercial.jpg","../assets/imgs/Villa.jpg"];
+  public showHeader: boolean;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad DashboardPage');
   }
+
+  ngAfterViewInit(){
+    this.slides.fade = {
+      crossFade: true
+    }
+  }
+
+  ngOnInit(){
+    if(window.innerWidth > 800)
+    this.showHeader = false;
+    else
+    this.showHeader = true;
+
+  }
   
 
   ionViewDidEnter(){
-    //this.slides.startAutoplay();
-    setInterval(()=> {
-    this.imgName = this.imgList[this.imgIndex];  
-    this.imgIndex++;
+    this.slides.startAutoplay();
+//     setInterval(()=> {
+//     this.imgName = this.imgList[this.imgIndex];  
+//     this.imgIndex++;
 
-    if(this.imgIndex >= this.imgList.length)
-    {
-      this.imgIndex = 0;
+//     if(this.imgIndex >= this.imgList.length)
+//     {
+//       this.imgIndex = 0;
       
-    } 
-    this.imgAction = true;   
+//     } 
+//     this.imgAction = true;   
       
- }, 7000);
+//  }, 7000);
   }
 
   ionViewWillLeave(){
-    //this.slides.stopAutoplay();
+    this.slides.stopAutoplay();
   }
 
 }

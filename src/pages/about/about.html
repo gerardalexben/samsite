@@ -1,4 +1,4 @@
-<ion-header>
+<ion-header *ngIf="showHeader">
     <ion-navbar>
       <ion-buttons start>
         <button ion-button menuToggle>
@@ -9,6 +9,7 @@
     </ion-navbar>
   </ion-header>
 <ion-content padding style="background-color:#0091EA">
+    <ion-title>About</ion-title>
   <ion-grid>
 <ion-row>
 <ion-card>

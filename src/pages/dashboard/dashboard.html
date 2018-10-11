@@ -13,7 +13,7 @@
 </ion-header> -->
 
 
-<ion-header>
+<ion-header *ngIf="showHeader">
     <ion-navbar>
       <ion-buttons start>
         <button ion-button menuToggle>
@@ -24,9 +24,21 @@
     </ion-navbar>
   </ion-header>
 
-<ion-content padding class="fullHeight"> 
+<ion-content padding class="fullHeight">
 
-<ion-grid>
+  <ion-title>Home</ion-title>
+
+  <ion-row style="height:50%">
+    <ion-slides pager effect="fade" autoplay="3000" loop="true" speed="3000" [slidesPerView]="1">
+      <ion-slide style="height:100%">
+        <img style="height:100%" src="../assets/imgs/Apartments.jpg">
+      </ion-slide>
+      <ion-slide style="height:100%">
+        <img style="height:100%" src="../assets/imgs/comercial.jpg">
+      </ion-slide>
+    </ion-slides>
+</ion-row>
+<!-- <ion-grid>
     <ion-row>
         <ion-title>Real Estate</ion-title>
     </ion-row>
@@ -60,7 +72,7 @@
         </p>
       </ion-card-content>
       </ion-card>
-      </ion-col>
+      </ion-col> -->
              
     <!--<ion-col style="background-color:white">
       <ion-card>
@@ -69,7 +81,7 @@
           </ion-card-content>         
       </ion-card>
     </ion-col>-->
-    <ion-col style="background-color:white">
+    <!-- <ion-col style="background-color:white">
       <ion-card >
           <img src="../assets/imgs/Villa.jpg"/>
           <ion-card-content>
@@ -145,7 +157,7 @@
       </ion-card>
       </ion-col>
     </ion-row>
-</ion-grid>  
+</ion-grid>   -->
 
 </ion-content>
 

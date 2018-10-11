@@ -6,7 +6,7 @@
 -->
 
 
-<ion-header>
+<ion-header *ngIf="showHeader">
     <ion-navbar>
       <ion-buttons start>
         <button ion-button menuToggle>
@@ -16,6 +16,6 @@
       <ion-title>Services</ion-title>
     </ion-navbar>
   </ion-header>
-<ion-content padding>
+<ion-content padding>  
   <img style="width:100%;height:95%" src="../../assets/imgs/services.png">  
 </ion-content>

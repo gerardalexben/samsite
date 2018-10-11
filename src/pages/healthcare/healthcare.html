@@ -12,7 +12,7 @@
 
 </ion-header> -->
 
-<ion-header>
+<ion-header *ngIf="showHeader">
     <ion-navbar>
       <ion-buttons start>
         <button ion-button menuToggle>
@@ -23,5 +23,6 @@
     </ion-navbar>
   </ion-header>
 <ion-content padding>
+    <ion-title>Sericulture</ion-title>
   <img style="width:70%;height:95%" src="../../assets/imgs/healthcare.jpg">
 </ion-content>

@@ -4,6 +4,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
+import { TabsPage } from '../pages/tabs/tabs';
 @Component({
   templateUrl: 'app.html'
 })
@@ -17,6 +18,13 @@ export class MyApp {
       statusBar.styleDefault();
       splashScreen.hide();
     });
+  }
+
+  ngOnInit(){
+    if(window.innerWidth > 800)
+    this.rootPage = TabsPage;
+    else
+    this.rootPage = HomePage;
   }
 }
 

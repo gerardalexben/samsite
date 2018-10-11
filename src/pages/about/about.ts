@@ -14,12 +14,20 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'about.html',
 })
 export class AboutPage {
-
+public showHeader: boolean;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AboutPage');
+  }
+
+  ngOnInit(){
+    if(window.innerWidth > 800)
+    this.showHeader = false;
+    else
+    this.showHeader = true;
+
   }
 
 }

@@ -14,6 +14,7 @@ import { IonicPage, NavController, NavParams,App } from 'ionic-angular';
   templateUrl: 'services.html',
 })
 export class ServicesPage {
+  public showHeader: boolean;
 
  constructor(public navCtrl: NavController, public navParams: NavParams,public app: App) {
     
@@ -23,6 +24,14 @@ export class ServicesPage {
     console.log('ionViewDidLoad ServicesPage');
     if(this.navParams.data.pageName)
     this.navCtrl.push(this.navParams.data.pageName);
+  }
+
+  ngOnInit(){
+    if(window.innerWidth > 800)
+    this.showHeader = false;
+    else
+    this.showHeader = true;
+
   }
 
 }

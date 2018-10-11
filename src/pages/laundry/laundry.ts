@@ -16,7 +16,7 @@ import { ViewChild } from '@angular/core';
 })
 export class LaundryPage {
   @ViewChild(Slides) slides: Slides;
-
+  public showHeader: boolean;
   public showGallery: boolean = false;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
@@ -39,6 +39,14 @@ export class LaundryPage {
   ionViewWillLeave() {
     if (this.showGallery)
       this.slides.stopAutoplay();
+  }
+
+  ngOnInit(){
+    if(window.innerWidth > 800)
+    this.showHeader = false;
+    else
+    this.showHeader = true;
+
   }
 
 }

@@ -17,6 +17,7 @@ import { ViewChild } from '@angular/core';
 export class FilmPage {
   @ViewChild(Slides) slides: Slides;
   public showGallery: boolean = false;
+  public showHeader: boolean;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
@@ -39,6 +40,14 @@ export class FilmPage {
   ionViewWillLeave() {
     // if (this.showGallery)
     //   this.slides.stopAutoplay();
+  }
+
+  ngOnInit(){
+    if(window.innerWidth > 800)
+    this.showHeader = false;
+    else
+    this.showHeader = true;
+
   }
 
 }

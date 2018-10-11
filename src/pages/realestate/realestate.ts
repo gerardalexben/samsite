@@ -30,6 +30,7 @@ export class RealestatePage {
     "../../assets/imgs/fwdconstructionphotos/pic9.jpg",
     "../../assets/imgs/fwdconstructionphotos/pic10.jpg"        
   ];
+  public showHeader: boolean;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
@@ -52,6 +53,14 @@ export class RealestatePage {
   ionViewWillLeave() {
     if (this.showGallery)
       this.slides.stopAutoplay();
+  }
+
+  ngOnInit(){
+    if(window.innerWidth > 800)
+    this.showHeader = false;
+    else
+    this.showHeader = true;
+
   }
 
 }

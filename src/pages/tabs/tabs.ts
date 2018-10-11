@@ -28,6 +28,7 @@ export class TabsPage {
   public tabevent: any;
   myIndex: number;
  pageName: any;
+ tabPlacement: any;
  @ViewChild('myTabs') tabRef: Tabs;
  
   constructor(public navParams: NavParams, public app: App, public popoverCtrl: PopoverController) {
@@ -36,6 +37,13 @@ export class TabsPage {
     //if(navParams.data.pageName != undefined)
     this.pageName = {pageName: navParams.data.pageName};
     
+  }
+
+  ngOnInit(){
+    if(window.innerWidth > 800)
+    this.tabPlacement = "top";
+    else
+    this.tabPlacement = "bottom";
   }
    presentPopover(myEvent: any) {
     if(myEvent != undefined){
