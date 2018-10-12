@@ -49,7 +49,7 @@ export class TabsPage {
     if(myEvent != undefined){
       this.tabevent = myEvent;     
       console.log("popover clicked");
-      popover = this.popoverCtrl.create(ServiceslistPage);
+      popover = this.popoverCtrl.create(ServiceslistPage,{},{cssClass:'popover-class'});
       popover.present({
         ev: {target: myEvent.btn._elementRef.nativeElement}
       });

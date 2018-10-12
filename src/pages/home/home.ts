@@ -82,7 +82,7 @@ export interface PageInterface {
 })
 export class HomePage {
   // Basic root for our content view
-  rootPage = 'TabsPage';
+  rootPage:string;
  
   // Reference to the app's root nav
   @ViewChild(Nav) nav: Nav;
@@ -96,6 +96,14 @@ export class HomePage {
   ];
  
   constructor(public navCtrl: NavController, public app: App) { }
+
+  ngOnInit(){
+    if(window.innerWidth > 800)
+    this.rootPage = 'TabsPage';
+    else
+    this.rootPage = 'DashboardPage';
+
+  }
  
   openPage(page: PageInterface) {
     let params = {};
@@ -124,7 +132,11 @@ export class HomePage {
     } else {
       // Tabs are not active, so reset the root page 
       // In this case: moving to or from SpecialPage
-      this.nav.setRoot(this.rootPage, params);
+      if (this.rootPage == 'TabsPage')
+        this.nav.setRoot(this.rootPage, params);
+      else{
+        this.nav.setRoot(page.pageName);        
+      }
     }
   }
  

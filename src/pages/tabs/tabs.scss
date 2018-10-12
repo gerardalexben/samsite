@@ -1,3 +1,95 @@
 page-tabs {
-
+    .tabs-md .tab-button-text
+    {
+        font-size: 1.5rem;
+    }
+    
+    .tabs-md .tab-button[aria-selected=true]
+    {
+        color:rgb(255, 193, 7);
+    }
+    
+    
+        .popover-class{
+            top:56px !important; //since tab height is 56px
+        }
+        
+        .ion-ios-customicon-outline,
+        .ion-ios-customicon,.ion-md-customicon,.ion-md-customicon-outline {
+           content: url('../../assets/imgs/cmp_logo.png');
+           height:56px;
+           width:60% !important;
+        }
+    
+        .tabs-md .tabbar{
+            background-color:black;
+            background:black;
+            font-family: "Roboto", "Helvetica Neue", sans-serif;
+        }
+    
+         .tabs-md .tabbar{
+            background-color:black;
+            background:black;
+            font-family: "Roboto", "Helvetica Neue", sans-serif;
+        }
+    
+        .platform-cordova .tabs-md .tabbar{
+            background-color:black;
+            background:black;
+            font-family: "Roboto", "Helvetica Neue", sans-serif;
+        }
+    
+        .platform-ios .tabs-md .tabbar{
+            background-color:black;
+            background:black;
+            font-family: "Roboto", "Helvetica Neue", sans-serif;
+        }
+    
+        .tabs-md .tab-button{
+            background-color:black !important;
+            color:white;
+            font-family: "Roboto", "Helvetica Neue", sans-serif;
+        }
+    
+    
+        .platform-ios .tabs-md .tab-button{
+            background-color:black !important;
+            color:white;
+            font-family: "Roboto", "Helvetica Neue", sans-serif;
+        }
+    
+        .platform-cordova .tabs-md .tab-button{
+            background-color:black !important;
+            color:white;
+            font-family: "Roboto", "Helvetica Neue", sans-serif;
+        }
+    
+        .platform-ios .tab-button .tab-button-icon
+        {
+            color:white;
+        }
+    
+        .platform-cordova .tab-button .tab-button-icon
+        {
+            color:white;
+        }
+    
+        .tab-button .tab-button-icon
+        {
+            color:white;
+        }
+    
+        .tabs-ios .tab-button
+        {
+            color:white;
+            background: black;
+            font-family: "Roboto", "Helvetica Neue", sans-serif;
+        }
+        
+        .logoimg{
+            transition: transform .6s cubic-bezier(0.4,0,0.2,1),-webkit-transform .6s cubic-bezier(0.4,0,0.2,1);
+        }
+}
+.popover-class{
+    top:56px !important; //since tab height is 56px
 }
