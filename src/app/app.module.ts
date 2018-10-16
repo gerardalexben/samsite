@@ -27,11 +27,13 @@ import { RealestatePageModule } from '../pages/realestate/realestate.module';
 import { HealthcarePage } from '../pages/healthcare/healthcare';
 import { HealthcarePageModule } from '../pages/healthcare/healthcare.module';
 import { TabsPageModule } from '../pages/tabs/tabs.module';
+import { PopoverPage } from '../pages/tabs/tabs';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    PopoverPage
   ],
   imports: [
     BrowserModule,
@@ -46,7 +48,7 @@ import { TabsPageModule } from '../pages/tabs/tabs.module';
     FilmPageModule,
     RealestatePageModule,
     HealthcarePageModule,
-    TabsPageModule,
+    TabsPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -61,7 +63,8 @@ import { TabsPageModule } from '../pages/tabs/tabs.module';
     GarmentsPage,
     FilmPage,
     RealestatePage,
-    HealthcarePage
+    HealthcarePage,
+    PopoverPage
   ],
   providers: [
     StatusBar,
