@@ -1,12 +1,11 @@
-import { Component, ViewChild,ChangeDetectorRef  } from '@angular/core';
-import { IonicPage, NavController, NavParams, App, PopoverController, Tabs, ViewController } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { IonicPage, NavController, NavParams, App, PopoverController, Tabs, ViewController, Events } from 'ionic-angular';
 
 import { AboutPage } from '../about/about';
 import { ServicesPage } from '../services/services';
 import { ContactPage } from '../contact/contact';
 import { DashboardPage } from '../dashboard/dashboard';
 import { ServiceslistPage } from '../serviceslist/serviceslist';
-import { LaundryPage } from '../laundry/laundry';
 let popover: any;
 
 /**
@@ -28,16 +27,30 @@ export class TabsPage {
   public default: any = DashboardPage;
   public tabevent: any;
   myIndex: number;
- pageName: any;
- tabPlacement: any;
+  pageName: any;
+  tabPlacement: any;
+  public servicesMap = [{ index: 1, page: 'LaundryPage' },
+  { index: 2, page: 'GarmentsPage' },
+  { index: 3, page: 'RealestatePage' },
+  { index: 4, page: 'HealthcarePage' },
+  { index: 5, page: 'FilmPage' }];
+
  @ViewChild('myTabs') tabRef: Tabs;
  
-  constructor(public navParams: NavParams, public app: App, public popoverCtrl: PopoverController, public navCtrl: NavController) {
+  constructor(public navParams: NavParams, public app: App, public popoverCtrl: PopoverController, public navCtrl: NavController, public events: Events) {
     // Set the active tab based on the passed index from menu.ts
     this.myIndex = navParams.data.tabIndex || 0;
     //if(navParams.data.pageName != undefined)
     this.pageName = {pageName: navParams.data.pageName};
-    this.tab2 = null;    
+    this.tab2 = null;
+    events.subscribe('slide:clicked', (id) => {
+      console.log('Welcome', id);
+      let page = this.servicesMap.find(pgs => pgs.index == id).page;
+      this.tab2 = page;
+      let tab = this.navCtrl.getActiveChildNav().getByIndex(1);
+      tab.setRoot(page);
+      setTimeout(() => { this.navCtrl.getActiveChildNav().select(1); }, 100)
+    });
   }
 
   ngOnInit(){
@@ -80,8 +93,9 @@ export class TabsPage {
   setIndex(myEvent: any) {
     if (popover)
       popover.dismiss();
+      console.log("nav len: " + this.navCtrl.length());
     if (myEvent.tabTitle == "Services" && !this.navParams && this.tab2 == null)
-      this.presentPopover(myEvent)
+      this.presentPopover(myEvent);
     else {
       this.tab2 = null;
     }

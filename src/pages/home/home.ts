@@ -65,7 +65,7 @@
 
 import { TabsPage } from './../tabs/tabs';
 import { Component, ViewChild } from '@angular/core';
-import { IonicPage, NavController, Nav, App } from 'ionic-angular';
+import { IonicPage, NavController, Nav, App, Events } from 'ionic-angular';
  
 export interface PageInterface {
   title: string;
@@ -83,6 +83,11 @@ export interface PageInterface {
 export class HomePage {
   // Basic root for our content view
   rootPage:string;
+  public servicesMap = [{ index: 1, page: 'LaundryPage' },
+  { index: 2, page: 'GarmentsPage' },
+  { index: 3, page: 'RealestatePage' },
+  { index: 4, page: 'HealthcarePage' },
+  { index: 5, page: 'FilmPage' }];
  
   // Reference to the app's root nav
   @ViewChild(Nav) nav: Nav;
@@ -95,7 +100,13 @@ export class HomePage {
     { title: 'About', pageName: 'AboutPage', tabComponent: 'AboutPage', index: 3, children:[] }
   ];
  
-  constructor(public navCtrl: NavController, public app: App) { }
+  constructor(public navCtrl: NavController, public app: App, public events: Events) {
+    events.subscribe('slide:clicked', (id) => {
+      console.log('Welcome', id);
+      let page = this.servicesMap.find(pgs => pgs.index == id).page;
+      this.nav.setRoot(page);
+    });
+   }
 
   ngOnInit(){
     if(window.innerWidth > 800)

@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams,Slides } from 'ionic-angular';
+import { IonicPage, NavController, NavParams,Slides, Events } from 'ionic-angular';
 import { ViewChild } from '@angular/core';
+import { LaundryPage } from '../laundry/laundry';
+
 
 
 /**
@@ -22,7 +24,7 @@ export class DashboardPage {
   public imgIndex: any = 0;
   public imgList: any=  ["../assets/imgs/Apartments.jpg", "../assets/imgs/comercial.jpg","../assets/imgs/Villa.jpg"];
   public showHeader: boolean;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public events: Events) {
   }
 
   ionViewDidLoad() {
@@ -41,6 +43,12 @@ export class DashboardPage {
     else
     this.showHeader = true;
 
+  }
+
+  slideClicked(idx: number){    
+    if (idx) {
+      this.events.publish('slide:clicked', idx);
+    }
   }
   
 

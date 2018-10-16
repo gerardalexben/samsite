@@ -30,10 +30,10 @@
 
   <ion-row style="height:50%">
     <ion-slides pager effect="fade" autoplay="3000" loop="true" speed="3000" [slidesPerView]="1">
-      <ion-slide style="height:100%">
+      <ion-slide (click)="slideClicked(1)" style="height:100%">
         <img style="height:100%" src="../assets/imgs/Apartments.jpg">
       </ion-slide>
-      <ion-slide style="height:100%">
+      <ion-slide (click)="slideClicked(2)" style="height:100%">
         <img style="height:100%" src="../assets/imgs/comercial.jpg">
       </ion-slide>
     </ion-slides>
