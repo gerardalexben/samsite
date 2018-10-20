@@ -229,7 +229,7 @@
 
 <ion-row style="background-color:#3700B3;height:30%;">
   <ion-col style="display:flex">
-    <button style="margin:auto;font-family:roboto;font-size:3.5rem;background:none;color:white;">Contact Us</button>
+    <button style="margin:auto;font-family:roboto;font-size:3.5rem;background:none;color:white;" (click)="slideClicked('contact')">Contact Us</button>
     </ion-col>
   
 </ion-row>
@@ -253,11 +253,11 @@
     <ion-list style="background:black">
        <ion-item style="background:black;color:white">What we do?
         </ion-item>
-       <ion-item no-lines style="background:black;color:white">Real estate
+       <ion-item (click)="slideClicked(3)" no-lines style="background:black;color:white">Real estate
         </ion-item>
-      <ion-item no-lines style="background:black;color:white">Laundry
+      <ion-item (click)="slideClicked(1)" no-lines style="background:black;color:white">Laundry
         </ion-item>
-        <ion-item no-lines style="background:black;color:white">Film Distribution
+        <ion-item (click)="slideClicked(5)" no-lines style="background:black;color:white">Film Distribution
         </ion-item>
     </ion-list>
     
@@ -266,9 +266,9 @@
     <ion-list style="background:black">
       <ion-item no-lines style="background:black;color:white">
       </ion-item>
-       <ion-item no-lines style="background:black;color:white">Garments
+       <ion-item (click)="slideClicked(2)" no-lines style="background:black;color:white">Garments
         </ion-item>
-      <ion-item no-lines style="background:black;color:white">Cericultre
+      <ion-item (click)="slideClicked(4)" no-lines style="background:black;color:white">Sericulture
         </ion-item>        
     </ion-list>
     

@@ -102,9 +102,14 @@ export class HomePage {
  
   constructor(public navCtrl: NavController, public app: App, public events: Events) {
     events.subscribe('slide:clicked', (id) => {
+      if(id == "contact"){      
+      setTimeout(() => { this.nav.setRoot('ContactPage'); }, 100)
+      }
+      else{
       console.log('Welcome', id);
       let page = this.servicesMap.find(pgs => pgs.index == id).page;
       this.nav.setRoot(page);
+      }
     });
    }
 

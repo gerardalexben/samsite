@@ -44,12 +44,17 @@ export class TabsPage {
     this.pageName = {pageName: navParams.data.pageName};
     this.tab2 = null;
     events.subscribe('slide:clicked', (id) => {
+      if(id == "contact"){
+        setTimeout(() => { this.navCtrl.getActiveChildNav().select(2); }, 100)
+      }
+      else {
       console.log('Welcome', id);
       let page = this.servicesMap.find(pgs => pgs.index == id).page;
       this.tab2 = page;
       let tab = this.navCtrl.getActiveChildNav().getByIndex(1);
       tab.setRoot(page);
       setTimeout(() => { this.navCtrl.getActiveChildNav().select(1); }, 100)
+      }
     });
   }
 

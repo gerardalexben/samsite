@@ -79,8 +79,8 @@ let scrollInterval = setInterval( () => {
 
   
 
-  slideClicked(idx: number){    
-    if (idx) {
+  slideClicked(idx: any){    
+if (idx) {
       this.events.publish('slide:clicked', idx);
     }
   }
