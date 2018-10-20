@@ -36,6 +36,169 @@
       </ion-slide>
     </ion-slides>
 </ion-row>
+<ion-row style="background-color:white;height:30%;">
+  <ion-col style="display:flex">
+    <button style="margin:auto;font-family:roboto;font-size:3.5rem;background:none;color:black;">Real estate</button>
+    </ion-col>  
+</ion-row>
+<ion-row>
+    <ion-col>
+      <ion-card>
+        <img src="../assets/imgs/villa.jpg"/>
+        <ion-card-content>
+          <ion-card-title>
+            Villas
+          </ion-card-title>
+          <p>
+            The most popular industrial group ever, and largely
+            responsible for bringing the music to a mass audience.
+          </p>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+    <ion-col>
+      <ion-card>
+          <img src="../assets/imgs/Apartments.jpg"/>
+          <ion-card-content>
+          <ion-card-title>
+            Apartments
+          </ion-card-title>
+          <p>
+          The most popular industrial group ever, and largely
+          responsible for bringing the music to a mass audience.
+          </p>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+    <ion-col>
+      <ion-card>
+        <img src="../assets/imgs/comercial.jpg"/>
+        <ion-card-content>
+        <ion-card-title>
+          Commercial
+        </ion-card-title>
+        <p>
+          The most popular industrial group ever, and largely
+          responsible for bringing the music to a mass audience.
+        </p>
+      </ion-card-content>
+      </ion-card>
+      </ion-col>
+    </ion-row>
+
+
+<ion-row style="background-color:white;height:30%;">
+  <ion-col style="display:flex">
+    <button style="margin:auto;font-family:roboto;font-size:3.5rem;background:none;color:black;">Film Distribution</button>
+    </ion-col>  
+</ion-row>
+
+<ion-row>    
+    <ion-col>
+      <ion-card>
+        <img class="logoimg" src="../assets/imgs/cinema1.jpg"/>
+        <ion-card-content>
+          <ion-card-title>
+            Arriving in theatres on
+          </ion-card-title>
+          <p>
+            19 Oct 2018 Sunday
+          </p>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+    <ion-col>
+      <ion-card>
+          <img src="../assets/imgs/2.jpg"/>
+          <ion-card-content>
+          <ion-card-title>
+            Arriving in theatres on
+          </ion-card-title>
+          <p>
+          19 Oct 2018 Sunday
+          </p>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+    <ion-col>
+      <ion-card>
+        <img src="../assets/imgs/3.jpg"/>
+        <ion-card-content>
+        <ion-card-title>
+          Arriving in theatres on
+        </ion-card-title>
+        <p>
+         19 Oct 2018 Sunday
+        </p>
+      </ion-card-content>
+      </ion-card>
+      </ion-col>
+      <ion-col>
+      <ion-card>
+        <img src="../assets/imgs/4.jpg"/>
+        <ion-card-content>
+        <ion-card-title>
+          Arriving in theatres on
+        </ion-card-title>
+        <p>
+          19 Oct 2018 Sunday
+        </p>
+      </ion-card-content>
+      </ion-card>
+      </ion-col>
+    
+    </ion-row>
+    <ion-row style="background-color:white;height:30%;">
+  <ion-col style="display:flex">
+    <button style="margin:auto;font-family:roboto;font-size:3.5rem;background:none;color:black;">Textile</button>
+    </ion-col>  
+
+</ion-row> 
+<ion-row>
+    <ion-col>
+      <ion-card>
+        <img class="logoimg" src="../assets/imgs/fashion.jpg"/>
+        <ion-card-content>
+          <ion-card-title>
+            Brand and Retail
+          </ion-card-title>
+          <p>
+            The most popular industrial group ever, and largely
+            responsible for bringing the music to a mass audience.
+          </p>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+    <ion-col>
+      <ion-card>
+          <img src="../assets/imgs/towel.jpg"/>
+          <ion-card-content>
+          <ion-card-title>
+            Fabric & Apparel
+          </ion-card-title>
+          <p>
+          The most popular industrial group ever, and largely
+          responsible for bringing the music to a mass audience.
+          </p>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+    <ion-col>
+      <ion-card>
+        <img src="../assets/imgs/textile-manufacturing.jpg"/>
+        <ion-card-content>
+        <ion-card-title>
+          Textile manufacturing
+        </ion-card-title>
+        <p>
+          The most popular industrial group ever, and largely
+          responsible for bringing the music to a mass audience.
+        </p>
+      </ion-card-content>
+      </ion-card>
+      </ion-col>
+    </ion-row>
+
 <ion-row style="background-color:#3700B3;height:30%;">
   <ion-col style="display:flex">
     <button style="margin:auto;font-family:roboto;font-size:3.5rem;background:none;color:white;">Contact Us</button>
@@ -99,6 +262,8 @@
  
   
 </ion-row>
+
+
 <!-- <ion-grid>
     <ion-row>
         <ion-title>Real Estate</ion-title>
@@ -219,6 +384,7 @@
       </ion-col>
     </ion-row>
 </ion-grid>   -->
+<button *ngIf="showButton" (click)="scrollToTop(1000)">Scroll Top</button>
 
 </ion-content>
 

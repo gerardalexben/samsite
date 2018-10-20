@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef } from '@angular/core';
 import { IonicPage, NavController, NavParams,Slides, Events } from 'ionic-angular';
 import { ViewChild } from '@angular/core';
 import { LaundryPage } from '../laundry/laundry';
@@ -24,7 +24,9 @@ export class DashboardPage {
   public imgIndex: any = 0;
   public imgList: any=  ["../assets/imgs/Apartments.jpg", "../assets/imgs/comercial.jpg","../assets/imgs/Villa.jpg"];
   public showHeader: boolean;
-  constructor(public navCtrl: NavController, public navParams: NavParams, public events: Events) {
+  public ionScroll;
+  public showButton = false;
+  constructor(public navCtrl: NavController, public navParams: NavParams, public events: Events, public myElement: ElementRef) {
   }
 
   ionViewDidLoad() {
@@ -42,8 +44,34 @@ export class DashboardPage {
     this.showHeader = false;
     else
     this.showHeader = true;
+    console.log(this.myElement.nativeElement.children[0].children[1])
+    // Ionic scroll element
+    this.ionScroll = this.myElement.nativeElement.children[0].children[1]
+
+    console.log(this.ionScroll.scrollTop);
+    
+    // On scroll function
+    this.ionScroll.addEventListener("scroll", () => {
+      if (this.ionScroll.scrollTop > window.innerHeight) {
+        this.showButton = true;
+      } else {
+        this.showButton = false;
+      }
+    });
 
   }
+
+  scrollToTop(scrollDuration) {
+let scrollStep = -this.ionScroll.scrollTop / (scrollDuration / 15);
+let scrollInterval = setInterval( () => {
+    if ( this.ionScroll.scrollTop != 0 ) {
+        this.ionScroll.scrollTop = this.ionScroll.scrollTop + scrollStep;
+    } else {
+      clearInterval(scrollInterval);
+    }
+}, 15);}
+
+  
 
   slideClicked(idx: number){    
     if (idx) {
