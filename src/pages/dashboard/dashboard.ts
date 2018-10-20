@@ -26,6 +26,7 @@ export class DashboardPage {
   public showHeader: boolean;
   public ionScroll;
   public showButton = false;
+  public startAnimate = false;
   constructor(public navCtrl: NavController, public navParams: NavParams, public events: Events, public myElement: ElementRef) {
   }
 
@@ -52,10 +53,15 @@ export class DashboardPage {
     
     // On scroll function
     this.ionScroll.addEventListener("scroll", () => {
+      
       if (this.ionScroll.scrollTop > window.innerHeight) {
         this.showButton = true;
+        this.startAnimate = true;
+        console.log("scroll down");
       } else {
         this.showButton = false;
+        this.startAnimate = false;
+        console.log("scroll out");
       }
     });
 
