@@ -13,93 +13,11 @@
 </ion-header> -->
 
 
-<ion-header *ngIf="showHeader">
-    <ion-navbar>
-      <ion-buttons start>
-        <button ion-button menuToggle>
-        <ion-icon name="menu"></ion-icon>
-      </button>
-      </ion-buttons>      
-    </ion-navbar>
-  </ion-header>
-
-<ion-content padding class="fullHeight">
 
 
-  <ion-row style="height:50%">
-    <ion-slides pager effect="fade" autoplay="3000" loop="true" speed="3000" [slidesPerView]="1">
-      <ion-slide (click)="slideClicked(1)" style="height:100%">
-        <img style="height:100%" src="../assets/imgs/Apartments.jpg">
-      </ion-slide>
-      <ion-slide (click)="slideClicked(2)" style="height:100%">
-        <img style="height:100%" src="../assets/imgs/comercial.jpg">
-      </ion-slide>
-    </ion-slides>
-</ion-row>
-<ion-row style="background-color:#3700B3;height:30%;">
-  <ion-col style="display:flex">
-    <button style="margin:auto;font-family:roboto;font-size:3.5rem;background:none;color:white;">Contact Us</button>
-    </ion-col>
-  
-</ion-row>
-<ion-row style="background-color:black;height:30%;">
-  
-  <ion-col style="display:flex">
-    <ion-list style="background:black">
-       <ion-item style="background:black;color:white">Head office
-        </ion-item>
-        <ion-item no-lines style="background:black;color:white"><p style="color:white"> Myhna Heights<br/>
-        State highway-35<br/>
-        Bangalore 560087<br/></p>
-        </ion-item>
-    </ion-list>
-  </ion-col>
-  
-  
-  <ion-col style="display:flex">
-     
-     
-    <ion-list style="background:black">
-       <ion-item style="background:black;color:white">What we do?
-        </ion-item>
-       <ion-item no-lines style="background:black;color:white">Real estate
-        </ion-item>
-      <ion-item no-lines style="background:black;color:white">Laundry
-        </ion-item>
-        <ion-item no-lines style="background:black;color:white">Film Distribution
-        </ion-item>
-    </ion-list>
-    
-    </ion-col>
-    <ion-col style="display:flex">
-    <ion-list style="background:black">
-      <ion-item no-lines style="background:black;color:white">
-      </ion-item>
-       <ion-item no-lines style="background:black;color:white">Garments
-        </ion-item>
-      <ion-item no-lines style="background:black;color:white">Cericultre
-        </ion-item>        
-    </ion-list>
-    
- </ion-col>
-     <ion-col style="display:flex">
-       <ion-list style="background:black">
-       <ion-item style="background:black;color:white">Contact
-        </ion-item>
-      <ion-item no-lines style="background:black;color:white">9742994882
-        </ion-item>
-        <ion-item no-lines style="background:black;color:white">jmreddy.s@gmail.com        </ion-item>
-    </ion-list>
-    
-    
-    </ion-col>
-     <ion-col style="display:flex">
-    
-    </ion-col>
- 
-  
-</ion-row>
-<!-- <ion-grid>
+<ion-content padding class="fullHeight"> 
+
+<ion-grid>
     <ion-row>
         <ion-title>Real Estate</ion-title>
     </ion-row>
@@ -133,7 +51,7 @@
         </p>
       </ion-card-content>
       </ion-card>
-      </ion-col> -->
+      </ion-col>
              
     <!--<ion-col style="background-color:white">
       <ion-card>
@@ -142,7 +60,7 @@
           </ion-card-content>         
       </ion-card>
     </ion-col>-->
-    <!-- <ion-col style="background-color:white">
+    <ion-col style="background-color:white">
       <ion-card >
           <img src="../assets/imgs/Villa.jpg"/>
           <ion-card-content>
@@ -218,7 +136,7 @@
       </ion-card>
       </ion-col>
     </ion-row>
-</ion-grid>   -->
+</ion-grid>  
 
 </ion-content>
 
