@@ -24,7 +24,7 @@
   </ion-header>
 
 <ion-content padding class="fullHeight">
-
+<button ion-fab class="scrolltop" *ngIf="showButton" (click)="scrollToTop(1000)"><ion-icon name="arrow-round-up"></ion-icon></button>
 
   <ion-row style="height:50%">
     <ion-slides pager effect="fade" autoplay="3000" loop="true" speed="3000" [slidesPerView]="1">
@@ -36,7 +36,13 @@
       </ion-slide>
     </ion-slides>
 </ion-row>
-<ion-row style="background-color:white;height:30%;">
+<ion-row style="background-color:white;height:5%;">
+  <ion-col style="display:flex">
+    <button style="margin:auto;font-family:roboto;font-size:2.0rem;background:none;color:black;">Our businesses</button>
+    </ion-col>  
+</ion-row>
+
+<ion-row style="background-color:white;height:10%;">
   <ion-col style="display:flex">
     <button style="margin:auto;font-family:roboto;font-size:3.5rem;background:none;color:black;">Real estate</button>
     </ion-col>  
@@ -92,7 +98,7 @@
       </ion-col>
     </ion-row>
 
-<ion-row style="background-color:white;height:30%;">
+<ion-row style="background-color:white;height:10%;">
   <ion-col style="display:flex">
     
     </ion-col>  
@@ -101,7 +107,7 @@
     </ion-col>
 </ion-row>
 
-<ion-row style="background-color:white;height:30%;">
+<ion-row style="background-color:white;height:10%;">
   <ion-col style="display:flex">
     <button style="margin:auto;font-family:roboto;font-size:3.5rem;background:none;color:black;">Film Distribution</button>
     </ion-col>  
@@ -169,7 +175,7 @@
       </ion-col>
     
     </ion-row>
-    <ion-row style="background-color:white;height:30%;">
+    <ion-row style="background-color:white;height:10%;">
   <ion-col style="display:flex">
     <button style="margin:auto;font-family:roboto;font-size:3.5rem;background:none;color:black;">Textile</button>
     </ion-col>  
@@ -233,7 +239,7 @@
     </ion-col>
   
 </ion-row>
-<ion-row style="background-color:black;height:30%;">
+<ion-row style="background-color:black;height:40%;">
   
   <ion-col style="display:flex">
     <ion-list style="background:black">
@@ -412,9 +418,10 @@
       </ion-col>
     </ion-row>
 </ion-grid>   -->
-<button *ngIf="showButton" (click)="scrollToTop(1000)">Scroll Top</button>
+
 
 </ion-content>
+
 
     <!--ion-title style="padding-top:1%">Org Name</ion-title>
     <ion-content style="height:60%">
