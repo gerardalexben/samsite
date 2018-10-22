@@ -1,1 +1,2 @@
-<ion-nav [root]="rootPage"></ion-nav>
+<ion-nav *ngIf="!showTest" [root]="rootPage"></ion-nav>
+<div style="height:100%;background-color: black" *ngIf="showTest"></div>
