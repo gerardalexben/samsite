@@ -1,9 +1,9 @@
 page-about {
-    .scroll-content{
-        background-image: url('../../assets/imgs/services.png');
-        background-repeat: repeat;
-        background-size: 100%;
-     }
+    // .scroll-content{
+    //     background-image: url('../../assets/imgs/services.png');
+    //     background-repeat: repeat;
+    //     background-size: 100%;
+    //  }
      .card-md p{
          color: #ffc107;
      }
@@ -12,9 +12,13 @@ page-about {
          color: #333333
      }
 
-    //  .toolbar-title-md
-    //  {
-    //      color: white;
-    //  }
+     .toolbar-title-md
+     {
+         color: inherit;
+     }
+
+     .scroll-content{
+         background-color: #f7f7f7;
+     }
 
 }

@@ -96,14 +96,14 @@ export class HomePage {
     { title: 'Home', pageName: 'DashboardPage', tabComponent: 'DashboardPage', index: 0, children:[] },
     { title: 'Services', pageName: 'ServicesPage', tabComponent: 'ServicesPage', index: 1,
      children:[{name:'Laundry', pageName:'LaundryPage'},{name:'Garments', pageName:'GarmentsPage'},{name:'Real Estate', pageName:'RealestatePage'},{name:'Sericulture', pageName:'HealthcarePage'},{name:'Film Distribution', pageName:'FilmPage'}] },
-    { title: 'Contact', pageName: 'ContactPage', tabComponent: 'ContactPage', index: 2, children:[] },
-    { title: 'About', pageName: 'AboutPage', tabComponent: 'AboutPage', index: 3, children:[] }
+    // { title: 'Contact', pageName: 'ContactPage', tabComponent: 'ContactPage', index: 2, children:[] },
+    { title: 'About Us', pageName: 'AboutPage', tabComponent: 'AboutPage', index: 3, children:[] }
   ];
  
   constructor(public navCtrl: NavController, public app: App, public events: Events) {
     events.subscribe('slide:clicked', (id) => {
       if(id == "contact"){      
-      setTimeout(() => { this.nav.setRoot('ContactPage'); }, 100)
+      setTimeout(() => { this.nav.setRoot('AboutPage'); }, 100)
       }
       else{
       console.log('Welcome', id);
