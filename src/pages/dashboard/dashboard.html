@@ -26,15 +26,19 @@
 <ion-content padding class="fullHeight">
 <button ion-fab class="scrolltop" *ngIf="showButton" (click)="scrollToTop(1000)"><ion-icon name="arrow-round-up"></ion-icon></button>
 
-  <ion-row style="height:50%">
-    <ion-slides pager effect="fade" autoplay="3000" loop="true" speed="3000" [slidesPerView]="1">
+  <ion-row style="height: 100%">
+    <!-- <img style="height:100%;width:100%" src="../../assets/imgs/building1.jpg"> -->
+    <div style="display:flex;justify-content: center;flex-direction: column; text-align:center; height:100%;width:100%;color:white;font-size: 3.5vmax;z-index: 1000;background-image: url('../../assets/imgs/building1.jpg');background-size: cover">
+      <div class="fadeInUp animated">MS GROUP</div>
+    </div>
+    <!-- <ion-slides pager effect="fade" autoplay="3000" loop="true" speed="3000" [slidesPerView]="1">
       <ion-slide (click)="slideClicked(1)" style="height:100%">
         <img style="height:100%" src="../assets/imgs/Apartments.jpg">
       </ion-slide>
       <ion-slide (click)="slideClicked(2)" style="height:100%">
         <img style="height:100%" src="../assets/imgs/comercial.jpg">
       </ion-slide>
-    </ion-slides>
+    </ion-slides> -->
 </ion-row>
 <ion-row style="background-color:white;height:5%;">
   <ion-col style="display:flex">

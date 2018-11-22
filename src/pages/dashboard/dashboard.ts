@@ -18,7 +18,7 @@ import { LaundryPage } from '../laundry/laundry';
   templateUrl: 'dashboard.html',
 })
 export class DashboardPage {
-  @ViewChild(Slides) slides: Slides;
+ // @ViewChild(Slides) slides: Slides;
   public imgName: any = "../assets/imgs/fashion.jpg";
   public imgAction: boolean = false;
   public imgIndex: any = 0;
@@ -35,9 +35,9 @@ export class DashboardPage {
   }
 
   ngAfterViewInit(){
-    this.slides.fade = {
-      crossFade: true
-    }
+    // this.slides.fade = {
+    //   crossFade: true
+    // }
   }
 
   ngOnInit(){
@@ -87,7 +87,7 @@ if (idx) {
   
 
   ionViewDidEnter(){
-    this.slides.startAutoplay();
+    //this.slides.startAutoplay();
 //     setInterval(()=> {
 //     this.imgName = this.imgList[this.imgIndex];  
 //     this.imgIndex++;
@@ -103,7 +103,7 @@ if (idx) {
   }
 
   ionViewWillLeave(){
-    this.slides.stopAutoplay();
+    //this.slides.stopAutoplay();
   }
 
 }

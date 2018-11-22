@@ -7,6 +7,11 @@ page-dashboard {
         @extend .fullHeight;
     }
 
+    .scroll-content {
+      margin-top:0 !important;
+      padding:0 !important;
+    }
+
     /* Here's some environment setup,
    scroll down for the interesting parts */
 
